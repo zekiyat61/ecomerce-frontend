@@ -1,4 +1,4 @@
-import {  useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import { assets } from "../assets/assets";
@@ -59,7 +59,6 @@ const Product = () => {
             <img src={assets.staricon} alt="" className="w-3 5" />
             <img src={assets.staricon} alt="" className="w-3 5" />
             <img src={assets.stardull} alt="" className="w-3 5" />
-            <p className="pl-2">(122)</p>
           </div>
           <p className="mt-5 text-3xl font-medium">
             {currency}
@@ -78,7 +77,6 @@ const Product = () => {
           <hr className="mt-8 sm:w-4/5" />
           <div className="text-sm text-gray-500 mt-5 flex flex-col gap-1">
             <p>100% Original product.</p>
-            <p>Cash on delivery is available on this product.</p>
             <p>Easy return and exchange policy within 7 days.</p>
           </div>
         </div>
