@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import axios from "axios";
 import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [currentState, setCurrentState] = useState("Login");
@@ -18,6 +19,7 @@ const Login = () => {
 
     try {
       if (currentState === "Sign Up") {
+        // Frontend validation for password length
         if (password.length < 8) {
           setErrorMessage("Password must be at least 8 characters.");
           return;
@@ -31,11 +33,11 @@ const Login = () => {
         if (response.data.success) {
           setToken(response.data.token);
           localStorage.setItem("token", response.data.token);
-          localStorage.setItem("userEmail", email); // ✅ Store user email
+          localStorage.setItem("userEmail", email); // Store user email
           toast.success("Signup successful!");
           navigate("/"); // Redirect after successful signup
         } else {
-          toast.error(response.data.message);
+          setErrorMessage(response.data.message); // Set error message from backend
         }
       } else {
         const response = await axios.post(
@@ -46,15 +48,19 @@ const Login = () => {
         if (response.data.success) {
           setToken(response.data.token);
           localStorage.setItem("token", response.data.token);
-          localStorage.setItem("userEmail", email); // ✅ Store user email
+          localStorage.setItem("userEmail", email); // Store user email
           toast.success("Login successful!");
           navigate("/"); // Redirect after successful login
         } else {
-          setErrorMessage("Incorrect email or password.");
+          setErrorMessage("Incorrect email or password."); // Set error message for login failure
         }
       }
     } catch (error) {
-      console.log(error);
+      console.error("Error:", error);
+      // Handle network errors or server errors
+      setErrorMessage(
+        error.response?.data?.message || "An error occurred. Please try again."
+      );
       toast.error(error.response?.data?.message || "An error occurred.");
     }
   };
@@ -74,8 +80,12 @@ const Login = () => {
         <p className="prata-regular text-3xl">{currentState}</p>
         <hr className="border-none h-[1.5px] w-8 bg-gray-800" />
       </div>
-      {errorMessage && <p className="text-red-500 text-sm">{errorMessage}</p>}{" "}
-      {/* Error message */}
+
+      {/* Display error message */}
+      {errorMessage && (
+        <p className="text-red-500 text-sm text-center">{errorMessage}</p>
+      )}
+
       {currentState === "Sign Up" && (
         <input
           onChange={(e) => setName(e.target.value)}
@@ -86,6 +96,7 @@ const Login = () => {
           required
         />
       )}
+
       <input
         onChange={(e) => setEmail(e.target.value)}
         value={email}
@@ -94,6 +105,7 @@ const Login = () => {
         placeholder="Email"
         required
       />
+
       <input
         onChange={(e) => setPassword(e.target.value)}
         value={password}
@@ -102,6 +114,7 @@ const Login = () => {
         placeholder="Password"
         required
       />
+
       <div className="w-full flex justify-between text-sm mt-[-8px]">
         <p className="cursor-pointer">Forgot your password?</p>
         <p
@@ -113,6 +126,7 @@ const Login = () => {
           {currentState === "Login" ? "Create account" : "Login Here"}
         </p>
       </div>
+
       <button className="bg-pink-500 text-white font-light px-8 py-2 mt-4">
         {currentState === "Login" ? "Sign In" : "Sign Up"}
       </button>

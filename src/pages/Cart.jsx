@@ -1,18 +1,20 @@
 import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import Title from "../components/Title";
-import { FaTrash } from "react-icons/fa"; // Import the trash icon
+// import { FaTrash } from "react-icons/fa"; // Import the trash icon
 import CartTotal from "../components/CartTotal";
 
 const Cart = () => {
-  const { products, currency, cartItems, updateQuantity, removeFromCart } =
+  const { products, currency, cartItems, updateQuantity,
+    //  removeFromCart
+     } =
     useContext(ShopContext);
   const [cartData, setCartData] = useState([]);
 
-  const handleRemove = (_id) => {
-    removeFromCart(_id);
-    setCartData((prev) => prev.filter((item) => item._id !== _id));
-  };
+  // const handleRemove = (_id) => {
+  //   removeFromCart(_id);
+  //   setCartData((prev) => prev.filter((item) => item._id !== _id));
+  // };
 
   useEffect(() => {
     if (products.length > 0) {
@@ -66,11 +68,11 @@ const Cart = () => {
                 defaultValue={cartItems[item._id]}
               />
               {/* Bin Icon for Removal */}
-              <FaTrash
+              {/* <FaTrash
                 onClick={() => handleRemove(item._id)}
                 className="text-pink-500 cursor-pointer w-5 h-5" // Adjust size and color
                 title="Remove item" // Tooltip for accessibility
-              />
+              /> */}
             </div>
           );
         })}
