@@ -58,7 +58,7 @@ import quality from "./quality_icon.png";
 import logoN from "./logoN.png";
 import staricon from "./star_icon.png";
 import stardull from "./star_dull_icon.png";
-import cart_icon from  "./cart_icon.png";
+import Cart_icon from "./Cart_icon.png";
 
 // Asset object
 export const assets = {
@@ -79,7 +79,7 @@ export const assets = {
   logoN,
   staricon,
   stardull,
-  cart_icon,
+  Cart_icon,
 };
 
 export const products = [
