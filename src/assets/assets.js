@@ -50,7 +50,7 @@ import cross_icon from "./cross_icon.png";
 import logo from "./logo.png";
 import search_icon from "./search_icon.png";
 import profile from "./profile_icon.png";
-import Cart from "./cart_icon.png";
+import cart from "./cart_icon.png";
 import dropdown from "./dropdown_icon.png";
 import hero from "./hero_img.png";
 import exchange from "./exchange_icon.png";
@@ -71,7 +71,7 @@ export const assets = {
   cross_icon,
   search_icon,
   profile,
-  Cart,
+  cart,
   dropdown,
   hero,
   exchange,

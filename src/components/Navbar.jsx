@@ -107,7 +107,7 @@ const Navbar = () => {
 
         <Link to="/cart" className="relative">
           <img
-            src={assets.Cart}
+            src={assets.cart}
             className="w-5 min-w-5 transition-transform hover:scale-110"
             alt="Cart"
           />
