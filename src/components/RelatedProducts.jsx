@@ -10,6 +10,7 @@ const RelatedProducts = ({ category }) => {
   useEffect(() => {
     if (products.length > 0) {
       let productsCopy = products.slice();
+      // heheheh
 
       productsCopy = productsCopy.filter((item) => category === item.category);
 
