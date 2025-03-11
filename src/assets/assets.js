@@ -50,7 +50,7 @@ import cross_icon from "./cross_icon.png";
 import logo from "./logo.png";
 import search_icon from "./search_icon.png";
 import profile from "./profile_icon.png";
-import Cart from "./Cart_icon.png";
+import Cart from "./cart_icon.png";
 import dropdown from "./dropdown_icon.png";
 import hero from "./hero_img.png";
 import exchange from "./exchange_icon.png";
@@ -58,7 +58,7 @@ import quality from "./quality_icon.png";
 import logoN from "./logoN.png";
 import staricon from "./star_icon.png";
 import stardull from "./star_dull_icon.png";
-import Cart_icon from "./cart_icon.png";
+// import cart_icon from "./cart_icon.png";
 
 // Asset object
 export const assets = {
@@ -79,7 +79,6 @@ export const assets = {
   logoN,
   staricon,
   stardull,
-  Cart_icon,
 };
 
 export const products = [
