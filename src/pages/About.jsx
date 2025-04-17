@@ -49,7 +49,7 @@ const About = () => {
         <div className="border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5 bg-white hover:bg-gray-50 transition duration-300 flex-1">
           <b className="text-pink-500 text-lg">Easy Cart Management</b>
           <p className="text-gray-600">
-            Add, remove, or update items in your cart effortlessly with our
+            Add or update items in your cart effortlessly with our
             intuitive cart management system.
           </p>
         </div>
