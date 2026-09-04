@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import Title from "../components/Title";
-// import { FaTrash } from "react-icons/fa"; // Import the trash icon
+// import { FaTrash } from "react-icons/fa"; 
 import CartTotal from "../components/CartTotal";
 
 const Cart = () => {

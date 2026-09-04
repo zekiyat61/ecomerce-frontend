@@ -19,7 +19,6 @@ const Product = () => {
       }
     });
   };
-
   useEffect(() => {
     fetchProductData();
   }, [productID, products]);
